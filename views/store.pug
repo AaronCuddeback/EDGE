@@ -11,13 +11,16 @@ block content
     img.single__map(src=h.staticMap(store.location.coordinates)) 
     p.single__location= store.location.address
     p
+    div(style="text-align:center")
+      img(src=`/uploads/${store.photo || 'store.jpg'}` width="300" height="250")
+    p
       text Birth Date: 
       text= store.birthday
     p
      text Phone Number: 
      text= store.phone  
 
-    p
+    p(style="text-align:center")
      text Description: 
      br
      text= store.description
