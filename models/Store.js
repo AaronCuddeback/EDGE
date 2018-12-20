@@ -55,7 +55,8 @@ const storeSchema = new mongoose.Schema({
 // Define indexes
 
 storeSchema.index({
-  name: 'text'
+  name: 'text',
+  description: 'text'
 });
 
 storeSchema.pre('save', async function(next) {
@@ -73,6 +74,7 @@ storeSchema.pre('save', async function(next) {
   next();
   //TODO make more resiliant so slugs are unique
 });
+[];
 
 storeSchema.statics.getTagsList = function() {
   return this.aggregate([
